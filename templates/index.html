@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+
+    <title>Commute</title>
+</head>
+<body style="background: #F0F8FF; .login{margin: auto; align:center}">
+<div class="login">
+    <h1 style="color:Violet">Best way to commute</h1>
+    <form action="{{url_for('predict')}}" method = "post">
+        <label for="Rain">Will it Rain:</label>
+        <select name="Rain" id="Rain">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><p></p>
+        <input type="text" name="Pollution(AQI)" placeholder="Enter Pollution AQI score[0-999]" maxlength="3" size="30" required="required"/><br>
+        <input type="text" name="Temprature(°C)" placeholder="Enter Temprature of your city in °C" maxlength="2" size="30" required="required"/><p></p>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Best Commute Method</button>
+    </form>
+        <br>
+        <br>
+        <h4 style="color:Violet">
+            {{prediction_text}}
+        </h4>
+</div>
+</body>
+</html>
